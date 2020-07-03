@@ -5,51 +5,54 @@ const execute = (bot, msg, args) => {
         const embed = new MessageEmbed()
             .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
             .setColor("RED")
-            .setTitle("Iniciando assistente desafio de Osiris!")
-            .setDescription("Selecione a opção desejada")
+            .setTitle("Guardião / Guardiã, escolha sua classe !")
+            .setDescription("Conforme você possuí dentro de Destiny")
             .addFields([
-                { name: "Novo", value: "✳️" },
-                { name: "Entrar", value: "🔫" },
-                { name: "Sair", value: "❌" }
-            ]);
+                { name: "Arcano(a)", value: "🧙🏽", inline: true },
+                { name: "Caçador(a)", value: "🔫", inline: true },
+                { name: "Titã", value: "🛡", inline: true }
+            ])
+            ;
         msg.member.send({ embed }).then(async (embed) => {
             try {
-                await embed.react("✳️");
+                await embed.react("🧙🏽");
                 await embed.react("🔫");
-                await embed.react("❌");
+                await embed.react("🛡");
                 const collector = embed.createReactionCollector((reaction, user) =>
                     [
-                        "✳️",
+                        "🧙🏽",
                         "🔫",
-                        "❌",
+                        "🛡",
                     ].includes(reaction.emoji.name) && !user.bot,
                     {
-                        time: 5000,
+                        time: 2000,
                     }
                 );
                 collector.on("collect", (reaction, user) => {
                     switch (reaction.emoji.name) {
-                        case "✳️":
+                        case "🧙🏽":
                             try {
-
-                                msg.member.send(`\`Você entrou no pareamento\``);
-                                console.log("Ação -> " + reaction.emoji.name);
+                                const role = msg.guild.roles.cache.find(r => r.name === "Arcano");
+                                if (role) msg.member.roles.add(role);
+                                console.log("novo cargo " + role);
                             } catch (error) {
                                 console.error("Error " + e);
                             }
                             break;
                         case "🔫":
                             try {
-
-                                console.log("Ação -> " + reaction.emoji.name);
+                                const role = msg.guild.roles.cache.find(r => r.name === "Caçador");
+                                if (role) msg.member.roles.add(role);
+                                console.log("novo cargo " + role);
                             } catch (error) {
                                 console.error("Error " + e);
                             }
                             break;
-                        case "❌":
+                        case "🛡":
                             try {
-
-                                console.log("Ação -> " + reaction.emoji.name);
+                                const role = msg.guild.roles.cache.find(r => r.name === "Titã");
+                                if (role) msg.member.roles.add(role);
+                                console.log("novo cargo " + role);
                             } catch (error) {
                                 console.error("Error " + e);
                             }
@@ -60,11 +63,11 @@ const execute = (bot, msg, args) => {
                 console.error("Atenção => Erro encontrado " + e);
             }
         });
-        msg.channel.bulkDelete(1);
     }
+    msg.channel.bulkDelete(1);
 }
 module.exports = {
-    name: "pareamento",
-    ajuda: "Lista quais são os pareamentos marcados.",
+    name: "classe",
+    ajuda: `Gerenciamento de classe do BOT`,
     execute
-}
+} 

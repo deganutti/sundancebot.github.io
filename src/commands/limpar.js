@@ -15,6 +15,7 @@ const execute = (bot, msg, args) => {
     } catch (error) {
         console.error(error);
     }
+    msg.channel.bulkDelete(1);
 
 }
 module.exports = {

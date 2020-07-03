@@ -27,7 +27,7 @@ const execute = (bot, msg, args) => {
         msg.react("💢");
         msg.react("➕");
         bot.on('raw', async dados => {
-            if (dados.t !== 'MESSAGE_REACTION_ADD' && dados.t !== 'MESSAGE_REACTION_REMOVE' && user.id === 'someID') return;
+            if (dados.t !== 'MESSAGE_REACTION_ADD' && dados.t !== 'MESSAGE_REACTION_REMOVE' && user.bot === 'someID') return;
             if (dados.d.emoji.name === "✅") {
                 msg.channel.send(`Click ✅ ok! ${dados.t}`);
             }
