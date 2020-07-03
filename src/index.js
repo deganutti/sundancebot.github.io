@@ -56,7 +56,7 @@ bot.on("message", (msg) => {
 //quando um novo membro adentra ao servidor
 bot.on("guildMemberAdd", member => {
     const embed = new MessageEmbed()
-        .setColor("RED")
+        .setColor(process.env.COR_EMBED)
         .setTitle("Sundance")
         .setAuthor(`${member.user.username}`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
         .setDescription("Cayde-6 me enviou para ajudar você!")
@@ -73,7 +73,7 @@ bot.on("guildMemberAdd", member => {
 //quando um membro sai do servidor
 bot.on("guildMemberRemove", member => {
     const embed = new MessageEmbed()
-        .setColor("RED")
+        .setColor(process.env.COR_EMBED)
         .setTitle("Sundance")
         .setAuthor(`${member.user.username}`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
         .setDescription("Cayde-6 me enviou para ajudar você!")
@@ -87,18 +87,5 @@ bot.on("guildMemberRemove", member => {
         ;
     member.guild.channels.cache.get('575771588298014732').send(embed).then(msg => { });
 });
-bot.on('raw', async dados => {
-    if (dados.t !== "MESSAGE_REACTION_ADD" && dados.t !== "MESSAGE_REACTION_REMOVE") {
-        return;
-    }
-    if (dados.d.message_id != "id_da_nsg") {
-        return;
-    }
-});
-
-
-
-
-
 
 console.log(bot.commands);

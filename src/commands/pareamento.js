@@ -4,7 +4,7 @@ const execute = (bot, msg, args) => {
     if (args.length === 0) {
         const embed = new MessageEmbed()
             .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
-            .setColor("RED")
+            .setColor(process.env.COR_EMBED)
             .setTitle("Iniciando assistente desafio de Osiris!")
             .setDescription("Selecione a opção desejada")
             .addFields([
