@@ -64,7 +64,7 @@ const execute = (bot, msg, args) => {
     }
 }
 module.exports = {
-    name: "pareamento",
-    ajuda: "Lista quais são os pareamentos marcados.",
+    name: "--",
+    ajuda: "--.",
     execute
 }
