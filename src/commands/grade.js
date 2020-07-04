@@ -81,10 +81,7 @@ const execute = (bot, msg, args) => {
                                                 switch (reaction.emoji.name) {
                                                     case "👨‍🚀":
                                                         try {
-                                                            const role = msg.guild.roles.cache.find(r => r.name === process.env.NIVEL_1);
-                                                            if (role) msg.member.roles.add(role);
-                                                            //  msg.member.send(r.name);
-                                                            console.log("novo cargo " + role);
+                                                            //iniciar incursões
                                                         } catch (error) {
                                                             console.error("Error " + e);
                                                         }
