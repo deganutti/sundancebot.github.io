@@ -3,14 +3,13 @@ const arquivo = require("dotenv"); //biblioteca de configuração de acesso ao s
 const fs = require("fs");
 const path = require("path");
 const Destiny2API = require('node-destiny-2');
-
 const MessageEmbed = require("discord.js").MessageEmbed;
 
 arquivo.config(); //abre arquivo
 
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-
+/*
 const destiny = new Destiny2API({
     key: bot.login.CHAVE,
     oauthConfg: {
@@ -23,7 +22,7 @@ const destiny = new Destiny2API({
 destiny.getManifest()
     .then(res => console.log(`Manifest: ${res.Response}`))
     .catch(err => console.log(`Error: ${err}`));
-
+*/
 //lê os arquivos js
 const commandFiles = fs.readdirSync(path.join(__dirname, "/commands")).filter((filename) => filename.endsWith(".js"));
 
@@ -34,6 +33,8 @@ for (var filename of commandFiles) {
 }
 
 bot.login(process.env.TOKEN);
+
+//destiny.login(process.env.CHAVE);
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} ON-LINE!`);
@@ -68,7 +69,7 @@ bot.on("guildMemberAdd", member => {
         .setTimestamp()
         .setFooter(`https://deganutti.github.io`)
         ;
-    member.guild.channels.cache.get('575771588298014732').send(embed).then(msg => { });
+    member.guild.channels.cache.get('553660809415491596').send(embed).then(msg => { });
 });
 //quando um membro sai do servidor
 bot.on("guildMemberRemove", member => {
@@ -83,9 +84,9 @@ bot.on("guildMemberRemove", member => {
             { name: 'bip!', value: `Guardião caido, sua luz se extiguil!` }
         )
         .setTimestamp()
-        .setFooter(`https://deganutti.github.io`)
+        .setFooter(`https://deganutti.github.io `)
         ;
-    member.guild.channels.cache.get('575771588298014732').send(embed).then(msg => { });
+    member.guild.channels.cache.get('553660809415491596').send(embed).then(msg => { });
 });
 
 console.log(bot.commands);
