@@ -9,20 +9,15 @@ arquivo.config(); //abre arquivo
 
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-/*
+
+
+var Api = process.env.CHAVE; //Chave da api da BUNGIE
+
+//cria nova chamada da API
 const destiny = new Destiny2API({
-    key: bot.login.CHAVE,
-    oauthConfg: {
-        id: bot.login.CLIENT_ID,
-        secret: ''
-    }
+    key: Api
 });
 
-//destiny2
-destiny.getManifest()
-    .then(res => console.log(`Manifest: ${res.Response}`))
-    .catch(err => console.log(`Error: ${err}`));
-*/
 //lê os arquivos js
 const commandFiles = fs.readdirSync(path.join(__dirname, "/commands")).filter((filename) => filename.endsWith(".js"));
 
