@@ -165,9 +165,6 @@ const execute = (bot, msg, args) => {
                                                                                             var data_hora = msg.mentions.members.first();
                                                                                             time: 10000;
                                                                                             msg.reply(`${data_hora}`)
-
-
-
                                                                                             break;
                                                                                         case "👨‍💻":
                                                                                             msg.reply(`\`Prestigio.\``);
