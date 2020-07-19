@@ -155,7 +155,70 @@ const execute = (bot, msg, args) => {
                                                                                     switch (reaction.emoji.name) {
                                                                                         case "👨‍🚀":
                                                                                             msg.reply(`\`Normal.  ${msg.author.id}\``);
+                                                                                            try {
+                                                                                                msg.channel.send("Informe o dia: ")
+                                                                                                    .then(function () {
+                                                                                                        msg.channel.awaitMessages(response => msg.content, {
+                                                                                                            max: 1,
+                                                                                                            time: 300000000,
+                                                                                                            errors: ["time"],
 
+                                                                                                        })
+                                                                                                            .then((collected) => {
+                                                                                                                msg.channel.send(`O dia será: ${collected.first().content}`);
+                                                                                                                var dia = collected.first().content;
+                                                                                                                msg.channel.bulkDelete(1);
+                                                                                                                msg.channel.send("informe a hora ")
+                                                                                                                    .then(function () {
+                                                                                                                        msg.channel.awaitMessages(response => msg.content, {
+                                                                                                                            max: 1,
+                                                                                                                            time: 300000000,
+                                                                                                                            errors: ["time"],
+                                                                                                                        })
+                                                                                                                            .then((collected) => {
+                                                                                                                                msg.channel.send(`será as: ${collected.first().content}`);
+                                                                                                                                var hora = collected.first().content;
+                                                                                                                                msg.channel.send("Informe alguma observação: ")
+                                                                                                                                    .then(function () {
+                                                                                                                                        msg.channel.awaitMessages(response => msg.content, {
+                                                                                                                                            max: 1,
+                                                                                                                                            time: 300000000,
+                                                                                                                                            errors: ["time"],
+                                                                                                                                        })
+                                                                                                                                            .then((collected) => {
+                                                                                                                                                msg.channel.send(`Observação: ${collected.first().content}`);
+                                                                                                                                                var observacao = collected.first().content;
+                                                                                                                                                const embed = new MessageEmbed()
+                                                                                                                                                    .setAuthor(`${msg.author.username}`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                                                                                                                                    .setColor(process.env.COR_EMBED)
+                                                                                                                                                    .setThumbnail("https://braytech.org/static/images/extracts/badges/01E3-00000248.png")
+                                                                                                                                                    .setTitle(`Raid Leviatã - Normal marcada.`)
+                                                                                                                                                    .setDescription(`Leviatã normal marcada para dia : ${dia} às ${hora}`)
+                                                                                                                                                    .addFields([
+                                                                                                                                                        { name: "Dia", value: `${dia}`, inline: true },
+                                                                                                                                                        { name: "Horas", value: `${hora}`, inline: true },
+                                                                                                                                                        { name: "Observação", value: `${observacao}`, inline: true },
+                                                                                                                                                        { name: "Juntar-se", value: `:arrow_forward:` },
+                                                                                                                                                        { name: "Sair", value: `:stop_button:` },
+                                                                                                                                                    ]);
+                                                                                                                                                msg.channel.send({ embed: embed })
+                                                                                                                                            });
+                                                                                                                                    });
+                                                                                                                            })
+                                                                                                                            .catch(function () {
+                                                                                                                                msg.channel.send("É necessário informar uma hora");
+                                                                                                                            });
+                                                                                                                    });
+                                                                                                            })
+                                                                                                            .catch(function () {
+                                                                                                                msg.channel.send("É necessário informar um dia.");
+                                                                                                            });
+                                                                                                    });
+
+
+                                                                                            } catch (error) {
+
+                                                                                            }
                                                                                             break;
                                                                                         case "👨‍💻":
                                                                                             msg.reply(`\`Prestigio.\``);

@@ -1,27 +1,39 @@
 const MessageEmbed = require("discord.js").MessageEmbed;
 const execute = (bot, msg, args) => {
 
-    var comando = '';
-    bot.commands.forEach((command) => {
-        if (command.ajuda) {
-            comando += `** ${process.env.PREFIX} ${command.name}** : ${command.ajuda} \n`;
-        }
-    }
-    );
-    const embed = new MessageEmbed()
-        .setColor("red")
-        .setTitle("Sundance")
-        .setAuthor(`OlÃ¡ ${msg.author.username} `, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
-        .setDescription("Cayde-6 me enviou para ajudar vocÃª!")
-        .setThumbnail("https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif")
-        .addField('Comando Executado', 'Ajuda')
-        .addFields(
-            { name: 'Comando', value: `${comando} \n - FIM DA LISTA - ` }
-        )
-        .setTimestamp()
-        .setFooter(`Perfil do desenvolvedor => https://deganutti.github.io`)
-        ;
-    msg.channel.send(embed).then(msg => { });
+    msg.channel.send("Informe o dia: ")
+        .then(function () {
+            msg.channel.awaitMessages(response => msg.content, {
+                max: 1,
+                time: 300000000,
+                errors: ["time"],
+            })
+                .then((collected) => {
+                    msg.channel.send(`O dia será: ${collected.first().content}`);
+                    var dia = collected.first().content;
+                    msg.channel.send("informe a hora ")
+                        .then(function () {
+                            msg.channel.awaitMessages(response => msg.content, {
+                                max: 1,
+                                time: 300000000,
+                                errors: ["time"],
+                            })
+                                .then((collected) => {
+                                    msg.channel.send(`será as: ${collected.first().content}`);
+                                    var horas = collected.first().content;
+                                    msg.channel.send(`Raid maracada para o dia : ${dia} às ${horas}`);
+
+                                })
+                                .catch(function () {
+                                    msg.channel.send("É necessário informar uma hora");
+                                });
+                        });
+                })
+                .catch(function () {
+                    msg.channel.send("É necessário informar um dia.");
+                });
+        });
+
 }
 module.exports = {
     name: "auto",
