@@ -155,31 +155,18 @@ const execute = (bot, msg, args) => {
                                                                                     switch (reaction.emoji.name) {
                                                                                         case "👨‍🚀":
                                                                                             msg.reply(`\`Normal.  ${msg.author.id}\``);
-                                                                                            /**
-                                                                                             * Criar interação de texto com o bot
-                                                                                             */
-                                                                                            var usuario = msg.author.id;
-                                                                                            var id_incurcao = 1;
 
-                                                                                            msg.reply(`\`Informe da data que necessita da incurção Ex: 01/01/2000\``);
-                                                                                            var data_hora = msg.mentions.members.first();
-                                                                                            time: 10000;
-                                                                                            msg.reply(`${data_hora}`)
                                                                                             break;
                                                                                         case "👨‍💻":
                                                                                             msg.reply(`\`Prestigio.\``);
-
                                                                                             break;
-
                                                                                     }
                                                                                 });
                                                                             });
                                                                             break;
-
                                                                     }
                                                                 });
                                                             });
-
                                                         } catch (error) {
                                                             console.error("Error " + error);
                                                         }
