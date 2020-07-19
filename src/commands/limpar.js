@@ -8,10 +8,10 @@ const execute = (bot, msg, args) => {
         }
         const deleteCount = parseInt(args[0]);
         if (!deleteCount || deleteCount < 1 || deleteCount > 99) {
-            return msg.reply("Informe uma quantidade entre 0 e 99");
+            return msg.reply("Informe uma quantidade entre 1 e 99");
         }
         msg.channel.bulkDelete(deleteCount + 1);
-        msg.channel.send(`${args[0]} mensagens excluidas com sucesso.`);
+        msg.channel.send(`mensagens excluidas com sucesso ${args[0]} .`);
     } catch (error) {
         console.error(error);
     }
@@ -20,6 +20,6 @@ const execute = (bot, msg, args) => {
 }
 module.exports = {
     name: "del",
-    ajuda: `Deleta mensagens do canal em questão! Ex: ${process.env.PREFIX}del 99`,
+    ajuda: `{ha um erro devido a virificação em duas etapas - verificar.} Deleta mensagens do canal em questão! Ex: ${process.env.PREFIX}del 99`,
     execute
 }
