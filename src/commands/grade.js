@@ -15,7 +15,6 @@ const execute = (bot, msg, args) => {
 
         msg.channel.send({ embed }).then(async (embed) => {
             try {
-
                 await embed.react("💠");
                 await embed.react("🌀");
                 await embed.react("❌");
@@ -176,7 +175,7 @@ const execute = (bot, msg, args) => {
                                                                                                                             errors: ["time"],
                                                                                                                         })
                                                                                                                             .then((collected) => {
-                                                                                                                                msg.channel.send(`será as: ${collected.first().content}`);
+                                                                                                                                msg.channel.send(`Será as: ${collected.first().content}`);
                                                                                                                                 var hora = collected.first().content;
                                                                                                                                 msg.channel.send("Informe alguma observação: ")
                                                                                                                                     .then(function () {
