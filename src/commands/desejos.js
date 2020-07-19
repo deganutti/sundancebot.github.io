@@ -180,20 +180,131 @@ const execute = (bot, msg, args) => {
                         }
                         break;
                     case process.env.IMG_8:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o oitavo desejo!")
+                                .setDescription(process.env.DESCRICAO_8)
+                                .setImage('https://i.imgur.com/CjNMQEJ.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_9:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o nono desejo!")
+                                .setDescription(process.env.DESCRICAO_9)
+                                .setImage('https://i.imgur.com/lgw8o4g.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_10:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo desejo!")
+                                .setDescription(process.env.DESCRICAO_10)
+                                .setImage('https://i.imgur.com/w8ifqGp.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_11:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo-primeiro desejo!")
+                                .setDescription(process.env.DESCRICAO_11)
+                                .setImage('https://i.imgur.com/K6JEHBJ.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_12:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo-segundo desejo!")
+                                .setDescription(process.env.DESCRICAO_12)
+                                .setImage('https://i.imgur.com/CQ1KTd5.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_13:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo-terceiro desejo!")
+                                .setDescription(process.env.DESCRICAO_13)
+                                .setImage('https://i.imgur.com/ua0mrR0.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_14:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo-quarto desejo!")
+                                .setDescription(process.env.DESCRICAO_14)
+                                .setImage('https://i.imgur.com/jW1LtnY.png')
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                     case process.env.IMG_15:
+                        try {
+                            const embed = new MessageEmbed()
+                                .setAuthor(`Sundance`, "https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif", "https://deganutti.github.io")
+                                .setThumbnail('https://i.pinimg.com/originals/40/8a/38/408a38dcd7a86586ac5eb1283e9910e2.gif')
+                                .setColor(process.env.COR_EMBED)
+                                .setTitle("Olá guardião, este e o décimo-quinto desejo!")
+                                .setDescription(`Ser da luz, você chegou até aqui em meus dominios. \n Eliminou a fera possuída por meu irmão, e antes que a ferisse em seu ultimo desejo. \n Desejo que antes de ti minha força sobrepuxará a sua. \n Meus dominios sejam vastos, que sua carne seja minha. \n SAVATHUN.`)
+                                .setTimestamp()
+                                .setFooter(`Desenvolvido e mantido por https://deganutti.github.io`);
+                            msg.channel.send({ embed: embed });
+                        } catch (error) {
+                            console.error(error);
+                        }
                         break;
                 }
             })
